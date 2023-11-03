@@ -17,7 +17,7 @@ def datamodel():
     model.add(Dense(1))
     return model
 model = datamodel()
-loaded_model = keras.models.load_model('bestmodel.h5')
+loaded_model = keras.models.load_model('/Users/paras/Deskto/bestmodel.h5')
 st.title("Fetch Rewards Take Home Expercise")
 st.header("Prediciting Receipt Counts for 2022")
 st.write("Choose the month for prediction of Receipt Counts")
@@ -25,7 +25,7 @@ month_list = ["January", "February", "March", "April", "May", "June", "July", "A
 month_dict = {}
 for idx, month_val in enumerate(month_list):
     month_dict[month_val] = idx + 1
-user_selection = str(st.selectbox("Choose one", month_list))
+user_selection = str(st.selectbox("Choose month", month_list))
 
 if user_selection:
     selected_month = month_dict[user_selection]
